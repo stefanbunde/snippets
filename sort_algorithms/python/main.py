@@ -1,7 +1,7 @@
 import random
 import timeit
 
-from src import bubble_sort, bubble_sort_optimized
+from src import bubble_sort, bubble_sort_optimized, insertion_sort
 
 
 short_list = list(range(10))
@@ -12,7 +12,7 @@ random.shuffle(long_list)
 
 
 def main():
-    for sort_method in ["bubble_sort", "bubble_sort_optimized"]:
+    for sort_method in ["bubble_sort", "bubble_sort_optimized", "insertion_sort"]:
         duration = timeit.timeit(stmt="{}(short_list[:])".format(sort_method),
                                  setup="from __main__ import {}, short_list".format(sort_method),
                                  number=100000)
