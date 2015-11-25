@@ -1,7 +1,7 @@
 import pytest
 import random
 
-from python.src import bubble_sort, bubble_sort_optimized
+from python.src import bubble_sort, bubble_sort_optimized, insertion_sort, insertion_sort_optimized
 
 
 ITEM_COUNT = 20
@@ -14,7 +14,8 @@ def random_data():
     return data
 
 
-@pytest.mark.parametrize("sort_method", [bubble_sort, bubble_sort_optimized])
+@pytest.mark.parametrize("sort_method", [bubble_sort, bubble_sort_optimized,
+                                         insertion_sort, insertion_sort_optimized])
 def test_bubble_sort(random_data, sort_method):
     expected = list(range(ITEM_COUNT))
     assert not expected == random_data
