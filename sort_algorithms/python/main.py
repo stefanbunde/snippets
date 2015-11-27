@@ -1,7 +1,8 @@
 import random
 import timeit
 
-from src import bubble_sort, bubble_sort_optimized, insertion_sort, insertion_sort_optimized
+from src import (bubble_sort, bubble_sort_optimized, insertion_sort, insertion_sort_optimized,
+                 selection_sort)
 
 
 short_list = list(range(10))
@@ -36,7 +37,7 @@ class Table(object):
 def main():
     table = Table()
     for sort_method in ["bubble_sort", "bubble_sort_optimized", "insertion_sort",
-                        "insertion_sort_optimized"]:
+                        "insertion_sort_optimized", "selection_sort"]:
         duration1 = timeit.timeit(stmt="{}(long_list[:])".format(sort_method),
                                   setup="from __main__ import {}, long_list".format(sort_method),
                                   number=1)
